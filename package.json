@@ -1,0 +1,48 @@
+{
+  "name": "devx-cli",
+  "version": "1.1.0",
+  "keywords": [
+    "devx",
+    "devx-cli",
+    "devxcli",
+    "devxenterprise"
+  ],
+  "description": "DevXEnterprise cli tool",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevXEnterprise/devx-cli.git"
+  },
+  "author": "Kamal Kashyap <sudokamal@proton.me>",
+  "license": "MIT",
+  "bin": {
+    "devx": "./dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "ncc build ./index.ts -w -o dist/",
+    "prerelease": "npx delete-cli dist",
+    "release": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register",
+    "build": "pnpm release"
+  },
+  "devDependencies": {
+    "@types/cross-spawn": "6.0.0",
+    "@types/node": "^20.12.3",
+    "@types/prompts": "2.4.2",
+    "@types/tar": "6.1.5",
+    "@types/validate-npm-package-name": "3.0.0",
+    "@vercel/ncc": "0.34.0",
+    "commander": "2.20.0",
+    "cross-spawn": "7.0.3",
+    "picocolors": "1.0.0",
+    "prompts": "2.4.2",
+    "tar": "6.2.1",
+    "typescript": "^5.4.5",
+    "update-check": "1.5.4",
+    "validate-npm-package-name": "3.0.0"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}
